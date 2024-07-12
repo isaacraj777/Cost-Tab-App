@@ -1,0 +1,28 @@
+#fluent-provider {
+  background: var(--colorTransparentBackground);
+}
+
+#spinner {
+  margin: 100;
+}
+
+.full-width-container {
+  width: 100% !important;
+  max-width: none !important;
+}
+.css-129 {
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important; 
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block;
+}
+.css-93 {
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important; 
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block;
+}

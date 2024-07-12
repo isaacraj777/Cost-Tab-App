@@ -1,0 +1,17 @@
+.costWidgetContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.costWidgetSection {
+    margin-bottom: 20px;
+}
+
+.costWidgetSection h2 {
+    margin-top: 0;
+}

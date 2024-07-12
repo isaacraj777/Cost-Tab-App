@@ -1,0 +1,11 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-container .ms-Stack > * {
+    flex: 1;
+    overflow: auto;
+
+  }
+  

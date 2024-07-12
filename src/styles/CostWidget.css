@@ -1,0 +1,55 @@
+.costWidget {
+    display: flex;
+    justify-content: space-around;
+    /* gap: 50px; */
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+.costPieChart {
+    /* flex: 1; */
+    height: 400px;
+    width: 450px;
+    padding: 0px;
+}
+
+.costHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section2 {
+    display: flex;
+    gap: 20px;
+}
+
+.costDetails {
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 20px;
+    flex: 1;
+}
+
+.costDetail {
+    text-align: center;
+}
+
+.costDetail h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.costDetail p {
+    /* margin: 10px 0 0; */
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}

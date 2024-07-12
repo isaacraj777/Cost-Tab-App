@@ -1,0 +1,160 @@
+.catalogDashboard {
+    text-align: center;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.header p {
+    margin: 10px 0 0;
+    font-size: 1.25rem;
+}
+
+.productCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.productCard {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.productCard img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 20px auto; /* Centering the image */
+}
+
+.productCardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.productInfo {
+    flex-grow: 1;
+    text-align: center; /* Center align the text */
+}
+
+.dropdownContainer {
+    margin-bottom: 10px; /* Space between dropdowns */
+}
+
+.customDropdown {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+}
+
+.customDropdown:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    outline: none;
+}
+
+.productPriceAndLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Reducing the margin-top to remove extra space */
+    padding-top: 10px; /* Reducing the padding-top to remove extra space */
+    border-top: 1px solid #f0f2f5;
+    position: relative;
+}
+
+.productPrice {
+    font-size: 1.5rem;
+    color: #4a90e2;
+    font-weight: bold;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.productLink {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px; /* Adds some space above the link */
+    text-align: center;
+    width: 100%;
+}
+
+.productLink:hover {
+    text-decoration: underline;
+}
+
+.productCard h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.productCard p {
+    color: #666;
+}
+
+.productCard ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: left;
+    font-size: 1.1rem; /* Increase the font size for static content */
+}
+
+.productCard ul li {
+    background-color: #f9fafe;
+    margin: 10px 0; /* Increase the margin to make items more spaced out */
+    padding: 10px 15px; /* Increase the padding to make items bigger */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.productCard ul li::before {
+    content: '•';
+    color: #4a90e2;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-size: 1.5rem; /* Increase the bullet size */
+}

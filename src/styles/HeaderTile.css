@@ -1,0 +1,60 @@
+/* HeaderTile.css */
+.headerContainer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .headerContainer p {
+    font-size: 24px;
+    font-weight: bold;
+    color:#ffffff; /* Adjust color as needed */
+  }
+  
+.headerTile {
+    width: 100%;  /* Ensures it takes the full width of its container*/
+    display: flex;
+    justify-content: space-between; /* Adjusts child elements to space out evenly*/
+    align-items: center; /* Vertically centers the child elements*/
+    background-color: #4f4f7b; /* Example background color*/
+    color: white;
+    padding: 20px 40px; /* Example padding, adjust as needed*/
+    box-sizing: border-box; /* Ensures padding doesn't affect the total width*/
+}
+
+
+.titleBox {
+    flex: 1 1 20%; /* Flex basis of 20%, grow and shrink normally */
+    margin: 10px; /* Margin around each box for spacing */
+    text-align: center; /* Center text within the box */
+}
+
+.titleText {
+    font-size: 1em; /* Standardize font size */
+    opacity: 0.75; /* Semi-transparent for the title text */
+}
+
+.valueText {
+    font-weight: bold;
+    font-size: 2em; /* Larger font size for emphasis */
+}
+
+.buttonBar {
+    flex: 1 1 40%; /* Flex basis of 40%, allowing more space */
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between buttons */
+}
+
+.button {
+    background-color: transparent; /* Transparent background */
+    color: #ffffff; /* White text */
+    border: 1px solid #ffffff; /* White border */
+    padding: 10px 20px;
+    text-transform: uppercase; /* UPPERCASE text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover */
+}
+
+.button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #4f4f7b; /* Dark blue text to match the background */
+}

@@ -1,0 +1,9 @@
+/* ActiveResources.module.css */
+.container {
+  padding: 10px;
+}
+
+.detailsList {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
