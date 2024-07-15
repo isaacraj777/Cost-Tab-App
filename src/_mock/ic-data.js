@@ -49,7 +49,7 @@ export const products = [...Array(21)].map((_, index) => {
     id: faker.string.uuid(),
     // cover: `/assets/images/products/product_${setIndex}.jpg`,
     name: IC_NAME[index],
-    cost: `$${faker.finance.amount(15, 100, 0)}0/${faker.string.fromCharacters(['Month', 'Project'])}`,
+    cost: `$${faker.finance.amount(15, 1000, 0)}0/${faker.string.fromCharacters(['Month', 'Project'])}`,
     priceSale: setIndex % 3 ? null : faker.number.int({ min: 19, max: 29, precision: 0.01 }),
     colors:
       (setIndex === 1 && PRODUCT_COLOR.slice(0, 2)) ||

@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
 
 
+import { Box, Icon } from '@mui/material';
 import { products } from '../../../_mock/ic-data';
 import { users } from '../../../_mock/user';
 import AppConversionRates from '../app-conversion-rates';
@@ -29,10 +30,15 @@ export default function AppView() {
 
   return (
     <Container maxWidth="xl">
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <Icon src={""} />
       <Typography variant="h3" sx={{ mb: 5, textAlign: 'center' }}>
-        Dashboard 👋
+        CIT Dashboard 👋
       </Typography>
+      <Box sx={{ width: 120, height: 120 }}>{<img alt="nihicon" src={'assets/images/avatars/NIH-Symbol.png'} />}</Box>
+      </Box>
 
+      {/* <CardMedia image='assets/images/avatars/nih_logo.png' sx={{ height: '250px', width: '100vw' }}/> */}
       <Grid container spacing={3}>
           <Grid xs={12} sm={6} md={3}>
             <AppWidgetSummary

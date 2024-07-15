@@ -4,7 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-import { Stack } from '@mui/material';
+import { Box, Icon, Stack } from '@mui/material';
 import AppNewsUpdate from '../../overview/app-news-update';
 import ProductFilters from '../product-filters';
 
@@ -22,6 +22,7 @@ export default function CatalogView() {
     description: string;
     image: string;
     link: string;
+    compute: string[];
     datasets: string[];
     frameworks: string[];
     units: string[];
@@ -41,12 +42,13 @@ export default function CatalogView() {
 const initialProducts: Product[] = [
    
     {
-        title: 'AWS Genomic Service',
+        title: 'AWS Genomic Workspace',
         description: 'Apply advanced coding and language models to a variety of use cases on Genomics.',
         image: awsImage,
         link: '',
-        datasets: ['Genomics dataset', 'Inner Eye dataset', 'Infant Birth Assessment dataset'],
-        frameworks: ['PyTorch', 'TensorFlow', 'Keras'],
+        compute: ['4 NVIDIA Tesla V100', '32 vCPUs', '244 GiB memory', '2 TB SSD'],
+        datasets: ['1000 Genomes Project'],
+        frameworks: ['PyTorch v1.9', 'SAMtools v1.10', 'Keras v2.4'],
         providers: ['Azure', 'AWS', 'GCP'],
 
         units: ['GPU', 'CPU'],
@@ -57,43 +59,46 @@ const initialProducts: Product[] = [
     },
   
     {
-        title: 'Azure Genomic Service',
+        title: 'Azure Genomic Workspace',
         description: 'Apply advanced coding and language models to a variety of use cases on Genomics',
         image : azureImage,
         link: '',
-        datasets: ['Genomics dataset', 'Inner Eye dataset', 'Infant Birth Assessment dataset'],
-        frameworks: ['PyTorch', 'TensorFlow', 'Keras'],
+        compute: ['4 NVIDIA Tesla V100', '24 vCPUs', '448 GiB memory', 'SSD (size varies)'],
+        datasets: ['1000 Genomes Project'],
+        frameworks: ['PyTorch v1.9', 'SAMtools v1.10', 'Keras v2.4'],
         units: ['GPU', 'CPU'],
         providers: ['Azure', 'AWS', 'GCP'],
         basePrice: 150,
         isStatic: true,
-        price: 100
+        price: 92.50
 
 
     },
     {
-        title: 'GCP Genomics Service',
+        title: 'GCP Genomics Workspace',
         description: 'Apply advanced coding and language models to a variety of use cases on Genomics',
         link: 'https://teams.microsoft.com/l/chat/0/0?users=28:7836d570-f336-40b1-8430-234a3a2df463&message=%7B%22userId%22%3A%20%2212345%22%2C%20%22query%22%3A%20%22data%20request%22%7D',
         image : gcpImage,
-        datasets: ['Genomics dataset', 'Inner Eye dataset', 'Infant Birth Assessment dataset'],
-        frameworks: ['PyTorch', 'TensorFlow', 'Keras'],
+        compute: ['32 vCPUs', '120 GiB memory', 'SSD (size varies)'],
+        datasets: ['1000 Genomes Project'],
+        frameworks: ['PyTorch v1.9', 'SAMtools v1.10', 'Keras v2.4'],
         providers: ['Azure', 'AWS', 'GCP'],
 
         units: ['GPU', 'CPU'],
         basePrice: 150,
         isStatic: true,
-        price: 100
+        price: 180
 
 
     },
     {
-        title: 'Choose Research Service to Deploy ',
+        title: 'Choose Research Workspace to Deploy ',
         description: 'Apply advanced coding and language models to a variety of use cases on Genomics',
         image :azureImage,
         link: '',
-        datasets: ['Genomics dataset', 'Inner Eye dataset', 'Infant Birth Assessment dataset'],
-        frameworks: ['PyTorch', 'TensorFlow', 'Keras'],
+        compute: [],
+        datasets: ['1000 Genomes Project'],
+        frameworks: ['PyTorch v1.9', 'SAMtools v1.10', 'Keras v2.4'],
         providers: ['Azure', 'AWS', 'GCP'],
 
         units: ['GPU', 'CPU'],
@@ -179,9 +184,13 @@ const handleSelectionChange = (index: number, type: 'dataset' | 'framework' | 'u
 
   return (
     <Container maxWidth="xl">
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <Icon />
       <Typography variant="h3" sx={{ mb: 5, textAlign: 'center' }}>
-        Catalog 👋
+        CIT Catalog 👋
       </Typography>
+      <Box sx={{ width: 120, height: 120 }}>{<img alt="nihicon" src={'assets/images/avatars/NIH-Symbol.png'} />}</Box>
+      </Box>
 
       <Stack
         direction="row"

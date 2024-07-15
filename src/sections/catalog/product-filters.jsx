@@ -59,7 +59,7 @@ export default function ProductFilters({ openFilter, onOpenFilter, onCloseFilter
         endIcon={<Iconify icon="ic:round-filter-list" />}
         onClick={onOpenFilter}
       >
-        Choose Research Service to Deploy&nbsp;
+        Choose Research Workspace to Deploy&nbsp;
       </Button>
 
       <Drawer

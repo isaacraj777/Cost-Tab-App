@@ -1,20 +1,19 @@
 import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import { Link as RouterLink } from 'react-router-dom'
-import Card from '@mui/material/Card';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
+import Divider from '@mui/material/Divider';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { Link as RouterLink } from 'react-router-dom';
 
-import { fToNow } from '../../utils/format-time';
 
+import { Avatar } from '@mui/material';
 import Iconify from '../../components/iconify';
 import Scrollbar from '../../components/scrollbar';
-import { Avatar, Grid, List, ListItem } from '@mui/material';
+import { grey } from '../../theme/palette';
 import { fCurrency } from '../../utils/format-number';
 
 // ----------------------------------------------------------------------
@@ -23,19 +22,52 @@ export default function AppNewsUpdate({ product, ...other }) {
   return (
     <>
      {product.isStatic &&
-      <Card {...other} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center',  p: 2}}>
+      <Card {...other} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center',  p: 2, height: '100%'}}>
           <Avatar src={product.image} sx={{ width: 80, height: 80 }}/>
           <CardHeader title={product.title} subheader={product.description} sx={{ mb: 5, textAlign: 'center' }}/>
 
-          {/* <Scrollbar> */}
-            <Stack sx={{ p: 3, pr: 0 }}>
-                <List sx={{ listStyleType: 'disc' }}>
-                  <ListItem sx={{ display: 'list-item' }}><Typography variant='h6'>{product.datasets[0]}</Typography></ListItem>
-                  <ListItem sx={{ display: 'list-item' }}><Typography variant='h6'>{product.frameworks[0]}</Typography></ListItem>
-                  <ListItem sx={{ display: 'list-item' }}><Typography variant='h6'>{product.units[0]}</Typography></ListItem>
-                </List>
+          <Scrollbar sx={{maxHeight: '30vh'}}>
+            <Stack sx={{ p:1 }} display={"flex"} justifyContent={"space-between"} textAlign={"center"} gap={2} flexDirection={"row"}>
+              {/* <Card sx={{display: 'flex', flexDirection: 'column',  justifyContent: 'center', gap: 2, p: 1, background: grey[300], width: '100%'}}> */}
+              <Box display={"flex"} flexDirection={"column"} gap={2}>
+                <Typography variant='h5'>Compute</Typography>
+                  {/* <List sx={{ listStyleType: 'disc' }}> */}
+                    {/* <ListItem sx={{ display: 'list-item' }}> */}
+                    <Box sx={{display: 'grid', gap: 2}}>
+                      {product.compute.map((item) => (
+                        <Typography variant='caption' bgcolor={grey[200]} sx={{p:1}}>{item}</Typography>
+                      ))}
+                    </Box>
+                    {/* </ListItem> */}
+                    {/* <ListItem sx={{ display: 'list-item' }}> */}
+                    {/* </ListItem> */}
+                  {/* </List> */}
+              </Box>
+              <Divider orientation="vertical" />
+              {/* </Card> */}
+              {/* <Card sx={{display: 'flex', flexDirection: 'column',  justifyContent: 'center', gap: 2, p: 1, background: grey[300], width: '100%'}}> */}
+              <Box display={"flex"} flexDirection={"column"} gap={2}>
+                <Typography variant='h5'>Software</Typography>
+                <Box sx={{display: 'grid', gap: 2}}>
+                      {product.frameworks.map((item) => (
+                          <Typography variant='caption' bgcolor={grey[200]} sx={{p:1}}>{item}</Typography>
+                      ))}
+                    </Box>
+              </Box>
+              <Divider orientation="vertical" />
+              {/* </Card> */}
+              {/* <Card sx={{display: 'flex', flexDirection: 'column',  justifyContent: 'center', gap: 2, p: 1, background: grey[300], width: '100%'}}> */}
+              <Box display={"flex"} flexDirection={"column"} gap={2}>
+                <Typography variant='h5'>Dataset</Typography>
+                <Box sx={{display: 'grid', gap: 2}}>
+                      {product.datasets.map((item) => (
+                          <Typography variant='caption' bgcolor={grey[200]} sx={{p:1}}>{item}</Typography>
+                      ))}
+                    </Box>
+              </Box>
+              {/* </Card> */}
             </Stack>
-          {/* </Scrollbar> */}
+          </Scrollbar>
 
           {/* <Typography variant="subtitle1"> */}
             <Typography
@@ -47,7 +79,7 @@ export default function AppNewsUpdate({ product, ...other }) {
                 placeSelf: 'flex-end'
               }}
             >
-              {fCurrency(product.price)}
+              {fCurrency(product.price)}/Day
             </Typography>
           {/* </Typography> */}
 
