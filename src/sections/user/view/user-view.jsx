@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-import Card from '@mui/material/Card';
 import Container from '@mui/material/Container';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -11,10 +10,8 @@ import TablePagination from '@mui/material/TablePagination';
 
 import { users } from '../../../_mock/user';
 
-import Scrollbar from '../../../components/scrollbar';
 
 import TableEmptyRows from '../table-empty-rows';
-import TableNoData from '../table-no-data';
 import UserTableHead from '../user-table-head';
 import UserTableRow from '../user-table-row';
 import UserTableToolbar from '../user-table-toolbar';

@@ -9,7 +9,7 @@ import { useResponsive } from '../hooks/use-responsive';
 
 // ----------------------------------------------------------------------
 
-const SPACING = 8;
+const SPACING = -20;
 
 export default function Main({ children, sx, ...other }) {
   const lgUp = useResponsive('up', 'lg');
