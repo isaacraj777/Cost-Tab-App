@@ -16,7 +16,7 @@ import AppWidgetSummary from '../app-widget-summary';
 export default function AppView() {
 
   const costByServiceHeaders = [
-    { id: 'service', label: 'Service'},
+    { id: 'service', label: 'Workspace'},
     { id: 'description', label: 'Description'},
     { id: 'cost', label: 'Cost'},
     { id: '' },
@@ -35,7 +35,7 @@ export default function AppView() {
       <Typography variant="h3" sx={{ mb: 5, textAlign: 'center' }}>
         CIT Dashboard 👋
       </Typography>
-      <Box sx={{ width: 120, height: 120 }}>{<img alt="nihicon" src={'assets/images/avatars/NIH-Symbol.png'} />}</Box>
+      <Box sx={{ width: 120, height: 120 }}>{<img alt="nihicon" src={'/assets/images/avatars/NIH-Symbol.png'} />}</Box>
       </Box>
 
       {/* <CardMedia image='assets/images/avatars/nih_logo.png' sx={{ height: '250px', width: '100vw' }}/> */}
@@ -96,6 +96,12 @@ export default function AppView() {
                     fill: 'solid',
                     data: [30500, 25530, 36120, 30500, 45185, 35678, 64420, 52000, 59129, 36000, 39150],
                   },
+                  {
+                    name: 'Oracle',
+                    type: 'area',
+                    fill: 'gradient',
+                    data: [18005, 9548, 15356, 18400, 15008, 15540, 25530, 18890, 35678, 17378, 28500],
+                  },
                 ],
               }} />
           </Grid>
@@ -108,12 +114,13 @@ export default function AppView() {
                   { label: 'GCP', value: 277833 },
                   { label: 'AWS', value: 465650 },
                   { label: 'Azure', value: 454212 },
+                  { label: 'Oracle', value: 217833 },
                   // { label: 'Africa', value: 4443 },
                 ],
               }} />
           </Grid><Grid xs={12} md={6} lg={7}>
             <AppConversionRates
-              title="Cost By Service Break Down"
+              title="Cost By Workspace Break Down"
               headers={costByServiceHeaders}
               data={users}
               showDesc />

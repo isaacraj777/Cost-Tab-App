@@ -13,9 +13,9 @@ import ProductFilters from '../product-filters';
 export default function CatalogView() {
 
   const botId = '7836d570-f336-40b1-8430-234a3a2df463'; // Replace with your actual Bot ID
-  const azureImage = 'assets/images/avatars/azure_logo.png';
-  const awsImage = 'assets/images/avatars/amazon_icon.png';
-  const gcpImage = 'assets/images/avatars/gcp_icon.png';
+  const azureImage = '/assets/images/avatars/azure_logo.png';
+  const awsImage = '/assets/images/avatars/amazon_icon.png';
+  const gcpImage = '/assets/images/avatars/gcp_icon.png';
 
   interface Product {
     title: string;
@@ -30,6 +30,8 @@ export default function CatalogView() {
     isStatic: boolean;
     dataset?: string;
     framework?: string;
+    applications?: string[];
+    app?: string;
     cloud?:string[];
     unit?: string;
     price: number;
@@ -42,8 +44,8 @@ export default function CatalogView() {
 const initialProducts: Product[] = [
    
     {
-        title: 'AWS Genomic Workspace',
-        description: 'Apply advanced coding and language models to a variety of use cases on Genomics.',
+        title: 'AWS Genomics Workspace',
+        description: 'Apply advanced coding and language models to a variety of use cases on Genomics',
         image: awsImage,
         link: '',
         compute: ['4 NVIDIA Tesla V100', '32 vCPUs', '244 GiB memory', '2 TB SSD'],
@@ -59,11 +61,11 @@ const initialProducts: Product[] = [
     },
   
     {
-        title: 'Azure Genomic Workspace',
+        title: 'Azure Genomics Workspace',
         description: 'Apply advanced coding and language models to a variety of use cases on Genomics',
         image : azureImage,
         link: '',
-        compute: ['4 NVIDIA Tesla V100', '24 vCPUs', '448 GiB memory', 'SSD (size varies)'],
+        compute: ['4 NVIDIA Tesla V100', '24 vCPUs', '448 GiB memory', '1 TB SSD'],
         datasets: ['1000 Genomes Project'],
         frameworks: ['PyTorch v1.9', 'SAMtools v1.10', 'Keras v2.4'],
         units: ['GPU', 'CPU'],
@@ -79,7 +81,7 @@ const initialProducts: Product[] = [
         description: 'Apply advanced coding and language models to a variety of use cases on Genomics',
         link: 'https://teams.microsoft.com/l/chat/0/0?users=28:7836d570-f336-40b1-8430-234a3a2df463&message=%7B%22userId%22%3A%20%2212345%22%2C%20%22query%22%3A%20%22data%20request%22%7D',
         image : gcpImage,
-        compute: ['32 vCPUs', '120 GiB memory', 'SSD (size varies)'],
+        compute: ['4 NVIDIA Tesla V100', '32 vCPUs', '120 GiB memory', '1 TB SSD'],
         datasets: ['1000 Genomes Project'],
         frameworks: ['PyTorch v1.9', 'SAMtools v1.10', 'Keras v2.4'],
         providers: ['Azure', 'AWS', 'GCP'],
@@ -87,7 +89,7 @@ const initialProducts: Product[] = [
         units: ['GPU', 'CPU'],
         basePrice: 150,
         isStatic: true,
-        price: 180
+        price: 88.50
 
 
     },
@@ -102,6 +104,7 @@ const initialProducts: Product[] = [
         providers: ['Azure', 'AWS', 'GCP'],
 
         units: ['GPU', 'CPU'],
+        applications: ['Computational Chemistry','Sequence Analysis','Structural Biology'],
         cloud : ['Azure' ,'AWS' ,'GCP'],
         basePrice: 150,
         isStatic: false,
@@ -140,14 +143,14 @@ const initialProducts: Product[] = [
     });
     setProducts(updatedProducts);
 }, []);
-const handleSelectionChange = (index: number, type: 'dataset' | 'framework' | 'unit' | 'provider', value: string) => {
+const handleSelectionChange = (index: number, type: 'dataset' | 'framework' | 'unit' | 'provider' | 'app', value: string) => {
   console.log(index, type, value);
     const newProducts = [...products];
     newProducts[index][type] = value;
     newProducts[index].price = newProducts[index].basePrice; // Reset to base price
 
     // Update the price based on selection
-    if (value === 'TensorFlow' || value === 'Inner Eye dataset') {
+    if (value === 'SAMtools v1.10' || value === 'PyTorch v1.9') {
         newProducts[index].price += 50;
     } else if (value === 'CPU') {
         newProducts[index].price -= 20;
@@ -189,7 +192,7 @@ const handleSelectionChange = (index: number, type: 'dataset' | 'framework' | 'u
       <Typography variant="h3" sx={{ mb: 5, textAlign: 'center' }}>
         CIT Catalog 👋
       </Typography>
-      <Box sx={{ width: 120, height: 120 }}>{<img alt="nihicon" src={'assets/images/avatars/NIH-Symbol.png'} />}</Box>
+      <Box sx={{ width: 120, height: 120 }}>{<img alt="nihicon" src={'/assets/images/avatars/NIH-Symbol.png'} />}</Box>
       </Box>
 
       <Stack

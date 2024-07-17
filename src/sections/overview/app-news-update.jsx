@@ -26,7 +26,7 @@ export default function AppNewsUpdate({ product, ...other }) {
           <Avatar src={product.image} sx={{ width: 80, height: 80 }}/>
           <CardHeader title={product.title} subheader={product.description} sx={{ mb: 5, textAlign: 'center' }}/>
 
-          <Scrollbar sx={{maxHeight: '30vh'}}>
+          <Scrollbar sx={{maxHeight: '31vh'}}>
             <Stack sx={{ p:1 }} display={"flex"} justifyContent={"space-between"} textAlign={"center"} gap={2} flexDirection={"row"}>
               {/* <Card sx={{display: 'flex', flexDirection: 'column',  justifyContent: 'center', gap: 2, p: 1, background: grey[300], width: '100%'}}> */}
               <Box display={"flex"} flexDirection={"column"} gap={2}>

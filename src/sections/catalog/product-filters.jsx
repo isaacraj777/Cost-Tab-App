@@ -59,7 +59,7 @@ export default function ProductFilters({ openFilter, onOpenFilter, onCloseFilter
         endIcon={<Iconify icon="ic:round-filter-list" />}
         onClick={onOpenFilter}
       >
-        Choose Research Workspace to Deploy&nbsp;
+        Choose Genomic Workspace to Deploy&nbsp;
       </Button>
 
       <Drawer
@@ -67,7 +67,7 @@ export default function ProductFilters({ openFilter, onOpenFilter, onCloseFilter
         open={openFilter}
         onClose={onCloseFilter}
         PaperProps={{
-          sx: { width: 280, border: "none", overflow: "hidden" },
+          sx: { width: 380, border: "none", overflow: "hidden" },
         }}
       >
         <Stack
@@ -89,6 +89,27 @@ export default function ProductFilters({ openFilter, onOpenFilter, onCloseFilter
 
         <Scrollbar>
           <Stack spacing={3} sx={{ p: 3 }}>
+          <Stack spacing={1}>
+              <Typography
+                variant="subtitle2"
+                sx={{ background: info.dark, p: 2, color: grey[100] }}
+              >
+                Research Workspace
+              </Typography>
+              <RadioGroup>
+                {product.applications.map((app, idx) => (
+                  <FormControlLabel
+                    key={idx}
+                    value={app}
+                    control={<Radio />}
+                    label={app}
+                    onChange={(e) =>
+                      handleSelect(index, "app", e.target.value)
+                    }
+                  />
+                ))}
+              </RadioGroup>
+            </Stack>
             <Stack spacing={1}>
               <Typography
                 variant="subtitle2"
