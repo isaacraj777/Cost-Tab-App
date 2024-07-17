@@ -20,7 +20,7 @@ export default function Router() {
         </DashboardLayout>
       ),
       children: [
-        { element: <IndexPage />, index: true },
+        { element: <IndexPage />, path: 'tab', index: true },
         { path: 'catalog', element: <CatalogPage /> },
       ],
     },
